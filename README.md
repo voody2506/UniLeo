@@ -26,4 +26,4 @@ Create new script with Mono provider.
 
     public  sealed  class  PlayerComponentProvider : MonoProvider<PlayerComponent> { }
 
-![](https://i.ibb.co/K07DLhT/2021-04-18-23-38-33.png)
+![](https://i.ibb.co/wWQcFg4/2021-04-18-23-43-16.png)
