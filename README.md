@@ -20,7 +20,7 @@ Package URL will be added Soon, you can clone this Repo now.
 	    public float health;
     }
 
-Now we need to control health value within the Unity Inspector,  but Unity Engine works only with MonoBehavior classes. Thats mean we need to create MonoBehavior Provider for our component.
+Now you need to control health value within the Unity Inspector,  but Unity Engine works only with MonoBehavior classes. Thats mean you need to create MonoBehavior Provider for our component.
 
 Create new script with Mono provider.
 
