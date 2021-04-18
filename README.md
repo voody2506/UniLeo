@@ -1,4 +1,4 @@
-# LeoECS Inspector
+# LeoECS Unity Inspector integration
 
 Important! This repository based on Leopotam ECS - Engine independent ECS that works with any Game Engine. But Unity Engineers often ask how to integrate Leo with Unity Inspector and deal with Prefabs.
 This lightweight repository is intended to help with this.
