@@ -47,11 +47,12 @@ If you read the Leo's documentation, you know that for successful work with Leo 
 
 > WorldInitSystem - system that automatically scan world, finds GameObjects with MonoProvider, creates entity and adds initial Components to the Entity.
 
+
 ## Spawn Prefabs
 
 Not all GameObjects needs to be created at the beginning of the gameplay. If you need to Spawn Prefab, just create entity with `InstantiateComponent` in any System
 
     EcsEntity entity = _world.NewEntity ();
-	var playerSpawner = new InstantiateComponent () { Ammo = 10, GunName = "Handgun" };
-
-
+    var spawner = new  InstantiateComponent() {gameObject, position, rotation};
+    entity.Replace (spawner);
+    
