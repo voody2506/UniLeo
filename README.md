@@ -24,7 +24,7 @@ Now we need to control health value within the Unity Inspector,  but Unity Engin
 
 Create new script with Mono provider.
 
-    public  sealed  class  PlayerComponentProvider : MonoProvider<PlayerComponent> { }
+    public sealed class PlayerComponentProvider : MonoProvider<PlayerComponent> { }
 
 Add PlayerComponentProvider into Inspector
 
