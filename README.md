@@ -1,4 +1,4 @@
-# LeoECS Inspector
+# LeoECS Unity Inspector integration
 
 Important! This repository based on Leopotam ECS - Engine independent ECS that works with any Game Engine. But Unity Engineers often ask how to integrate Leo with Unity Inspector and deal with Prefabs.
 This lightweight repository is intended to help with this.
@@ -29,3 +29,30 @@ Create new script with Mono provider.
 Add PlayerComponentProvider into Inspector
 
 ![](https://i.ibb.co/wWQcFg4/2021-04-18-23-43-16.png)
+
+Now you can control component values within the Inspector. Congratulations!
+
+## Convert your GameObjects to Entity
+
+If you read the Leo's documentation, you know that for successful work with Leo ECS, you should to create Startup ECS Monobehavior. To Automatically convert GameObjects to Entity add `WorldInitSystem` as the first system
+
+     void  Start() {
+	     _world = new  EcsWorld ();    
+	     _systems = new  EcsSystems (_world)
+	       .Add (new  WorldInitSystem())
+	        // Other ECS Systems   
+	     _systems.Init (); 
+        }
+
+
+> WorldInitSystem - system that automatically scan world, finds GameObjects with MonoProvider, creates entity and adds initial Components to the Entity.
+
+
+## Spawn Prefabs
+
+Not all GameObjects needs to be created at the beginning of the gameplay. If you need to Spawn Prefab, just create entity with `InstantiateComponent` in any System
+
+    EcsEntity entity = _world.NewEntity ();
+    var spawner = new  InstantiateComponent() {gameObject, position, rotation};
+    entity.Replace (spawner);
+    
