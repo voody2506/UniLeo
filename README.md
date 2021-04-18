@@ -52,7 +52,4 @@ If you read the Leo's documentation, you know that for successful work with Leo 
 
 Not all GameObjects needs to be created at the beginning of the gameplay. If you need to Spawn Prefab, just create entity with `InstantiateComponent` in any System
 
-    EcsEntity entity = _world.NewEntity ();
-    var spawner = new  InstantiateComponent() {gameObject, position, rotation};
-    entity.Replace (spawner);
-    
+    EntitySpawner.Instatiate(gameObject, position, rotation, _world);    
