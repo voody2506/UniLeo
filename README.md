@@ -10,12 +10,21 @@ Thanks to [SinyavtsevIlya](https://github.com/SinyavtsevIlya) and [Leopotam](htt
 
 **First** you need to install [Leopotam ECS](https://github.com/Leopotam/ecs), you can do it with Unity Package Manager
 
+Unity Editor -> Window -> Package Manager
+
 ```
 "com.leopotam.ecs": "https://github.com/Leopotam/ecs.git",
 ```
 **Second** install this repository
 
-Package URL will be added Soon, you can clone this Repo now.
+```
+"com.voody2506.UniLeo": "https://github.com/voody2506/UniLeo.git",
+```
+<details>
+  <summary>How to add Git URL</summary>
+
+![](https://i.ibb.co/4gHj69R/2021-04-20-00-23-10.png)
+</details>
 
 ## Create your first component
 
@@ -30,27 +39,31 @@ Create new script with Mono provider.
     public sealed class PlayerComponentProvider : MonoProvider<PlayerComponent> { }
 
 Add PlayerComponentProvider into Inspector
+<details>
+  <summary>Inspector Preview</summary>
 
 ![](https://i.ibb.co/wWQcFg4/2021-04-18-23-43-16.png)
+</details>
 
 Now you can control component values within the Inspector. Congratulations!
 
 ## Convert your GameObjects to Entity
 
-If you read the [Leo's documentation](https://github.com/Leopotam/ecs), you know that for successful work with Leo ECS, you should to create Startup ECS Monobehavior. To Automatically convert GameObjects to Entity add `WorldInitSystem` as the first system
+If you read the [Leo's documentation](https://github.com/Leopotam/ecs), you know that for successful work with Leo ECS, you should to create Startup ECS Monobehavior. To Automatically convert GameObjects to Entity add `ConvertScene()` method.
 
 ```
  void Start() 
  {
      _world = new  EcsWorld ();    
      _systems = new  EcsSystems (_world)
-       .Add (new  WorldInitSystem())
+       .ConvertScene(); // <- Need to add this method
+       .Add (new  ExampleSystem())
      	// Other ECS Systems   
      _systems.Init (); 
  }
 ```
 
-> WorldInitSystem - system that automatically scan world, finds GameObjects with MonoProvider, creates entity and adds initial Components to the Entity.
+> ConvertScene - method that automatically scan world, finds GameObjects with MonoProvider, creates entity and adds initial Components to the Entity.
 
 
 ## Spawn Prefabs
@@ -60,4 +73,8 @@ Not all GameObjects needs to be created at the beginning of the gameplay. If you
     EntitySpawner.Instatiate(gameObject, position, rotation, _world);
     
  > Every ECS System has _world reference
+ 
+ > Every Prefab initialize with new entity. Components will be added automatically
 
+
+## Thanks!
