@@ -39,14 +39,15 @@ Now you can control component values within the Inspector. Congratulations!
 
 ## Convert your GameObjects to Entity
 
-If you read the [Leo's documentation](https://github.com/Leopotam/ecs), you know that for successful work with Leo ECS, you should to create Startup ECS Monobehavior. To Automatically convert GameObjects to Entity add `WorldInitSystem` as the first system
+If you read the [Leo's documentation](https://github.com/Leopotam/ecs), you know that for successful work with Leo ECS, you should to create Startup ECS Monobehavior. To Automatically convert GameObjects to Entity add `ConvertScene()` method.
 
 ```
  void Start() 
  {
      _world = new  EcsWorld ();    
      _systems = new  EcsSystems (_world)
-       .Add (new  WorldInitSystem())
+       .ConvertScene(); // <- Need to add this method
+       .Add (new  PlayerControlSystem())
      	// Other ECS Systems   
      _systems.Init (); 
  }
