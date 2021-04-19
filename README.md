@@ -69,3 +69,4 @@ Not all GameObjects needs to be created at the beginning of the gameplay. If you
  > Every Prefab initialize with new entity. Components will be added automatically
 
 
+## Thanks!
