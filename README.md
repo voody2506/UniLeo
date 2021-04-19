@@ -34,8 +34,11 @@ Create new script with Mono provider.
     public sealed class PlayerComponentProvider : MonoProvider<PlayerComponent> { }
 
 Add PlayerComponentProvider into Inspector
+<details>
+  <summary>Show Picture</summary>
 
 ![](https://i.ibb.co/wWQcFg4/2021-04-18-23-43-16.png)
+</details>
 
 Now you can control component values within the Inspector. Congratulations!
 
