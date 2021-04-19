@@ -7,6 +7,8 @@ This lightweight repository is intended to help with this.
 
 **First** you need to install [Leopotam ECS](https://github.com/Leopotam/ecs), you can do it with Unity Package Manager
 
+Thanks to [SinyavtsevIlya](https://github.com/SinyavtsevIlya) and [Leopotam](https://github.com/Leopotam/ecs)
+
 ```
 "com.leopotam.ecs": "https://github.com/Leopotam/ecs.git",
 ```
