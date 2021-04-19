@@ -1,7 +1,7 @@
 # UniLeo - Unity Conversion Workflow for [Leopotam ECS](https://github.com/Leopotam/ecs)
 ## Easy convert GameObjects to Entity
 
-Important! This repository based on [Leopotam ECS](https://github.com/Leopotam/ecs) - Engine independent ECS that works with any Game Engine. But Unity Engineers often ask how to integrate Leo with Unity Inspector and deal with Prefabs.
+Important! This repository is extension to [Leopotam ECS](https://github.com/Leopotam/ecs) - Engine independent ECS that works with any Game Engine. But Unity Engineers often ask how to integrate Leo with Unity Inspector and deal with Prefabs.
 This lightweight repository is intended to help with this.
 
 Thanks to [SinyavtsevIlya](https://github.com/SinyavtsevIlya) and [Leopotam](https://github.com/Leopotam/ecs)
@@ -10,19 +10,21 @@ Thanks to [SinyavtsevIlya](https://github.com/SinyavtsevIlya) and [Leopotam](htt
 
 **First** you need to install [Leopotam ECS](https://github.com/Leopotam/ecs), you can do it with Unity Package Manager
 
-Unity Editor -> Window -> Package Manager
-
+Add new line to `Packages/manifest.json`
 ```
 "com.leopotam.ecs": "https://github.com/Leopotam/ecs.git",
 ```
 **Second** install this repository
 
 ```
-"com.voody2506.UniLeo": "https://github.com/voody2506/UniLeo.git",
+"com.voody.UniLeo": "https://github.com/voody2506/UniLeo.git",
 ```
+
 <details>
   <summary>How to add by Git URL</summary>
-
+Unity Editor -> Window -> Package Manager
+	
+	
 ![](https://i.ibb.co/4gHj69R/2021-04-20-00-23-10.png)
 </details>
 
