@@ -19,9 +19,10 @@ Package URL will be added Soon, you can clone this Repo now.
 
 ## Create your first component
 
-     public struct PlayerComponent {
+     public struct PlayerComponent 
+     {
 	    public float health;
-    }
+     }
 
 Now you need to control health value within the Unity Inspector,  but Unity Engine works only with MonoBehavior classes. Thats mean you need to create MonoBehavior Provider for our component.
 
@@ -40,12 +41,13 @@ Now you can control component values within the Inspector. Congratulations!
 If you read the [Leo's documentation](https://github.com/Leopotam/ecs), you know that for successful work with Leo ECS, you should to create Startup ECS Monobehavior. To Automatically convert GameObjects to Entity add `WorldInitSystem` as the first system
 
 ```
- void Start() {
-   _world = new  EcsWorld ();    
-   _systems = new  EcsSystems (_world)
-     .Add (new  WorldInitSystem())
-     // Other ECS Systems   
-   _systems.Init (); 
+ void Start() 
+ {
+   	_world = new  EcsWorld ();    
+   	_systems = new  EcsSystems (_world)
+     		.Add (new  WorldInitSystem())
+     		// Other ECS Systems   
+   	_systems.Init (); 
  }
 ```
 
