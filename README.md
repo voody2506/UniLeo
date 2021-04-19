@@ -10,6 +10,8 @@ Thanks to [SinyavtsevIlya](https://github.com/SinyavtsevIlya) and [Leopotam](htt
 
 **First** you need to install [Leopotam ECS](https://github.com/Leopotam/ecs), you can do it with Unity Package Manager
 
+Unity Editor -> Window -> Package Manager
+
 ```
 "com.leopotam.ecs": "https://github.com/Leopotam/ecs.git",
 ```
