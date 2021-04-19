@@ -19,8 +19,7 @@ Package URL will be added Soon, you can clone this Repo now.
 
 ## Create your first component
 
-     public struct PlayerComponent 
-     {
+     public struct PlayerComponent {
 	    public float health;
      }
 
