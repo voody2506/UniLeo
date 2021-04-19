@@ -1,19 +1,23 @@
 {
-    "name": "com.voody2506.leoecs-inspector",
-    "author": "Voody2506",
-    "displayName": "LeoECS Unity inspector integration",
-    "description": "This repository based on Leopotam ECS - Engine independent ECS that works with any Game Engine. But Unity Engineers often ask how to integrate Leo with Unity Inspector and deal with Prefabs. This lightweight repository is intended to help with this.",
+    "name": "com.voody2506.UniLeo",
+    "displayName": "UniLeo",
+    "description": "Unity Conversion Workflow for Leopotam ECS. Easy convert GameObjects to Entity.",
     "unity": "2019.1",
-    "version": "2021.3.22",
+    "version": "1.0.0",
     "keywords": [
         "leoecs",
         "ecs",
         "performance",
-        "voody2506"
+        "voody2506",
+        "UniLeo"
     ],
     "dependencies": {},
     "repository": {
         "type": "git",
-        "url": "https://github.com/voody2506/LeoECS-Inspector.git"
+        "url": "https://github.com/voody2506/UniLeo.git"
+    }
+    "author": {
+      "name": "Voody2506",
+      "email": "voody2506@gmail.com"
     }
 }

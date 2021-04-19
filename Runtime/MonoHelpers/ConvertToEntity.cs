@@ -2,4 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BaseMonoProvider : MonoBehaviour {}
+namespace Voody.UniLeo
+{
+    public class ConvertToEntity : MonoBehaviour { }
+}
