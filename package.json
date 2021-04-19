@@ -1,5 +1,5 @@
 {
-    "name": "com.voody2506.UniLeo",
+    "name": "com.voody2506.unileo",
     "displayName": "UniLeo",
     "description": "Unity Conversion Workflow for Leopotam ECS. Easy convert GameObjects to Entity.",
     "unity": "2019.1",
