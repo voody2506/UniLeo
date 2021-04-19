@@ -41,11 +41,11 @@ If you read the [Leo's documentation](https://github.com/Leopotam/ecs), you know
 
      void Start() 
      {
-	_world = new  EcsWorld ();    
-	_systems = new  EcsSystems (_world)
-	   .Add (new  WorldInitSystem())
-	   // Other ECS Systems   
-	_systems.Init (); 
+		_world = new  EcsWorld ();    
+		_systems = new  EcsSystems (_world)
+	   	  .Add (new  WorldInitSystem())
+	   	   // Other ECS Systems   
+		_systems.Init (); 
      }
 
 
