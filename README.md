@@ -65,6 +65,7 @@ Not all GameObjects needs to be created at the beginning of the gameplay. If you
     EntitySpawner.Instatiate(gameObject, position, rotation, _world);
     
  > Every ECS System has _world reference
+ 
  > Every Prefab initialize with new entity. Components will be added automatically
 
 
