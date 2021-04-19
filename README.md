@@ -40,7 +40,7 @@ Create new script with Mono provider.
 
 Add PlayerComponentProvider into Inspector
 <details>
-  <summary>Show Picture</summary>
+  <summary>Inspector Preview</summary>
 
 ![](https://i.ibb.co/wWQcFg4/2021-04-18-23-43-16.png)
 </details>
