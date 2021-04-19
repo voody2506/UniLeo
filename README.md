@@ -47,13 +47,13 @@ If you read the [Leo's documentation](https://github.com/Leopotam/ecs), you know
      _world = new  EcsWorld ();    
      _systems = new  EcsSystems (_world)
        .ConvertScene(); // <- Need to add this method
-       .Add (new  PlayerControlSystem())
+       .Add (new  ExampleSystem())
      	// Other ECS Systems   
      _systems.Init (); 
  }
 ```
 
-> WorldInitSystem - system that automatically scan world, finds GameObjects with MonoProvider, creates entity and adds initial Components to the Entity.
+> ConvertScene - method that automatically scan world, finds GameObjects with MonoProvider, creates entity and adds initial Components to the Entity.
 
 
 ## Spawn Prefabs
