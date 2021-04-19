@@ -21,7 +21,7 @@ Unity Editor -> Window -> Package Manager
 "com.voody2506.UniLeo": "https://github.com/voody2506/UniLeo.git",
 ```
 <details>
-  <summary>How to add Git URL</summary>
+  <summary>How to add by Git URL</summary>
 
 ![](https://i.ibb.co/4gHj69R/2021-04-20-00-23-10.png)
 </details>
