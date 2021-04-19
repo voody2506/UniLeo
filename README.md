@@ -15,7 +15,9 @@ Thanks to [SinyavtsevIlya](https://github.com/SinyavtsevIlya) and [Leopotam](htt
 ```
 **Second** install this repository
 
-Package URL will be added Soon, you can clone this Repo now.
+```
+"com.voody2506.UniLeo": "https://github.com/voody2506/UniLeo.git",
+```
 
 ## Create your first component
 
