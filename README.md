@@ -58,6 +58,17 @@ Now you can control component values within the Inspector. Congratulations!
 
  > At this moment you can not control values from Inspector at Runtime
 
+<details>
+  <summary>Choose conversion method</summary>
+
+![](https://i.ibb.co/GprVL54/2021-04-21-01-43-28.png)
+
+ > Convert And Inject - Just creates entitie with components based on GameObject
+ 
+ > Convert And Destroy - Deletes GameObject after conversion
+
+</details>
+
 ## Convert your GameObjects to Entity
 
 If you read the [Leo's documentation](https://github.com/Leopotam/ecs), you know that for successful work with Leo ECS, you should to create Startup ECS Monobehavior. To Automatically convert GameObjects to Entity add `ConvertScene()` method.
