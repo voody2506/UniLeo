@@ -22,7 +22,7 @@ namespace Voody.UniLeo
                     position = position,
                     rotation = rotation
                 };
-            entity.Replace (spawner);
+            entity.Replace(spawner);
         }
     }
 }

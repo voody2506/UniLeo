@@ -8,12 +8,10 @@ namespace Voody.UniLeo
     /// <summary>
     /// This class handle global init to ECS World
     /// </summary>
-
-    #if ENABLE_IL2CPP
+#if ENABLE_IL2CPP
         [Unity.IL2CPP.CompilerServices.Il2CppSetOption (Unity.IL2CPP.CompilerServices.Option.NullChecks, false)]
         [Unity.IL2CPP.CompilerServices.Il2CppSetOption (Unity.IL2CPP.CompilerServices.Option.ArrayBoundsChecks, false)]
-    #endif
-
+#endif
     class WorldInitSystem : IEcsPreInitSystem, IEcsRunSystem
     {
         EcsWorld _world = null;
@@ -27,20 +25,23 @@ namespace Voody.UniLeo
             // Iterate throught all gameobjects, that has ECS Components
             foreach (var convertable in convertableGameObjects)
             {
-                AddEntity (convertable.gameObject);
+                AddEntity(convertable.gameObject);
             }
         }
 
         public void Run()
         {
-            foreach (var i in _filter) {
-                ref var entity = ref _filter.GetEntity (i);
-                ref InstantiateComponent component = ref entity.Get<InstantiateComponent> ();
-                if (component.gameObject) {
+            foreach (var i in _filter)
+            {
+                ref var entity = ref _filter.GetEntity(i);
+                ref InstantiateComponent component = ref entity.Get<InstantiateComponent>();
+                if (component.gameObject)
+                {
                     AddEntity(component.gameObject);
                     GameObject.Instantiate(component.gameObject, component.position, Quaternion.identity);
                 }
-                entity.Del<InstantiateComponent> ();
+
+                entity.Del<InstantiateComponent>();
             }
         }
 
@@ -54,7 +55,7 @@ namespace Voody.UniLeo
                 if (component is IConvertToEntity entityComponent)
                 {
                     // Adding Component to entity
-                    entityComponent.Convert (entity);
+                    entityComponent.Convert(entity);
                 }
             }
         }
