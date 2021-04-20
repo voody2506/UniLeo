@@ -28,8 +28,15 @@ Unity Editor -> Window -> Package Manager
 ![](https://i.ibb.co/4gHj69R/2021-04-20-00-23-10.png)
 </details>
 
-## Create your first component
+## Don't forget NameSpace 
 
+```
+using Voody.UniLeo;
+```
+
+
+## Create your first component
+     [Serializable] // <- Important to add Serializable attribute
      public struct PlayerComponent {
 	    public float health;
      }
