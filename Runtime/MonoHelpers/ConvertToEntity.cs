@@ -4,5 +4,13 @@ using UnityEngine;
 
 namespace Voody.UniLeo
 {
-    public class ConvertToEntity : MonoBehaviour { }
+    public enum ConvertMode
+    {
+        ConvertAndInject,
+        ConvertAndDestroy
+    }
+    public class ConvertToEntity : MonoBehaviour
+    {
+        public ConvertMode convertMode;
+    }
 }
