@@ -7,7 +7,7 @@ namespace Voody.UniLeo
 {
     public static class EntitySpawner
     {
-        public static void Instatiate(
+        public static void Instantiate(
             GameObject gameObject,
             Vector3 position,
             Quaternion rotation,
