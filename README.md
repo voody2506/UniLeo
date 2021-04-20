@@ -77,7 +77,7 @@ If you read the [Leo's documentation](https://github.com/Leopotam/ecs), you know
 
 ## Spawn Prefabs
 
-Not all GameObjects needs to be created at the beginning of the gameplay. If you need to Spawn Prefab, just create entity with `InstantiateComponent` in any System or use built in EntitySpawner class
+Not all GameObjects need to be created at the beginning of the gameplay. If you need to Spawn Prefab, just create entity with `InstantiateComponent` in any System or use built in EntitySpawner class
 
     EntitySpawner.Instatiate(gameObject, position, rotation, _world);
     
