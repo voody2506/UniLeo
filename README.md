@@ -56,6 +56,8 @@ Add PlayerComponentProvider into Inspector
 
 Now you can control component values within the Inspector. Congratulations!
 
+ > At this moment you can not control values from Inspector at Runtime
+
 ## Convert your GameObjects to Entity
 
 If you read the [Leo's documentation](https://github.com/Leopotam/ecs), you know that for successful work with Leo ECS, you should to create Startup ECS Monobehavior. To Automatically convert GameObjects to Entity add `ConvertScene()` method.
