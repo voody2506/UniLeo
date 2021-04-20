@@ -7,11 +7,13 @@ namespace Voody.UniLeo
 {
     /// <summary>
     /// This class handle global init to ECS World
-    /// </summary>
+    /// <summary>
+
 #if ENABLE_IL2CPP
-        [Unity.IL2CPP.CompilerServices.Il2CppSetOption (Unity.IL2CPP.CompilerServices.Option.NullChecks, false)]
-        [Unity.IL2CPP.CompilerServices.Il2CppSetOption (Unity.IL2CPP.CompilerServices.Option.ArrayBoundsChecks, false)]
+    [Unity.IL2CPP.CompilerServices.Il2CppSetOption (Unity.IL2CPP.CompilerServices.Option.NullChecks, false)]
+    [Unity.IL2CPP.CompilerServices.Il2CppSetOption (Unity.IL2CPP.CompilerServices.Option.ArrayBoundsChecks, false)]
 #endif
+
     class WorldInitSystem : IEcsPreInitSystem, IEcsRunSystem
     {
         EcsWorld _world = null;
@@ -50,12 +52,27 @@ namespace Voody.UniLeo
         {
             // Creating new Entity
             EcsEntity entity = _world.NewEntity();
-            foreach (var component in gameObject.GetComponents<Component>())
+            ConvertToEntity convertComponent = gameObject.GetComponent<ConvertToEntity>();
+            if (convertComponent)
             {
-                if (component is IConvertToEntity entityComponent)
+                foreach (var component in gameObject.GetComponents<Component>())
                 {
-                    // Adding Component to entity
-                    entityComponent.Convert(entity);
+                    if (component is IConvertToEntity entityComponent)
+                    {
+                        // Adding Component to entity
+                        entityComponent.Convert(entity);
+                        GameObject.Destroy(component);
+                    }
+                }
+
+                switch (convertComponent.convertMode)
+                {
+                    case ConvertMode.ConvertAndDestroy:
+                        GameObject.Destroy(gameObject);
+                        break;
+                    case ConvertMode.ConvertAndInject:
+                        GameObject.Destroy(convertComponent);
+                        break;
                 }
             }
         }
