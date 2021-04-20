@@ -56,6 +56,8 @@ Add PlayerComponentProvider into Inspector
 
 Now you can control component values within the Inspector. Congratulations!
 
+ > At this moment you can not control values from Inspector at Runtime
+
 ## Convert your GameObjects to Entity
 
 If you read the [Leo's documentation](https://github.com/Leopotam/ecs), you know that for successful work with Leo ECS, you should to create Startup ECS Monobehavior. To Automatically convert GameObjects to Entity add `ConvertScene()` method.
@@ -77,9 +79,9 @@ If you read the [Leo's documentation](https://github.com/Leopotam/ecs), you know
 
 ## Spawn Prefabs
 
-Not all GameObjects needs to be created at the beginning of the gameplay. If you need to Spawn Prefab, just create entity with `InstantiateComponent` in any System or use built in EntitySpawner class
+Not all GameObjects need to be created at the beginning of the gameplay. If you need to Spawn Prefab, just create entity with `InstantiateComponent` in any System or use built in EntitySpawner class
 
-    EntitySpawner.Instatiate(gameObject, position, rotation, _world);
+    EntitySpawner.Instantiate(gameObject, position, rotation, _world);
     
  > Every ECS System has _world reference
  
