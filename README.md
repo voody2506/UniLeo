@@ -17,7 +17,7 @@ Add new line to `Packages/manifest.json`
 **Second** install this repository
 
 ```
-"com.voody.UniLeo": "https://github.com/voody2506/unileo.git",
+"com.voody.unileo": "https://github.com/voody2506/unileo.git",
 ```
 
 <details>
