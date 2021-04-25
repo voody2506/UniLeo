@@ -1,4 +1,5 @@
 using System;
+using System;
 using System.Collections.Generic;
 using Leopotam.Ecs;
 using UnityEngine;
@@ -8,13 +9,11 @@ namespace Voody.UniLeo
     /// <summary>
     /// This class handle global init to ECS World
     /// <summary>
-
 #if ENABLE_IL2CPP
     [Unity.IL2CPP.CompilerServices.Il2CppSetOption (Unity.IL2CPP.CompilerServices.Option.NullChecks, false)]
     [Unity.IL2CPP.CompilerServices.Il2CppSetOption (Unity.IL2CPP.CompilerServices.Option.ArrayBoundsChecks, false)]
 #endif
-
-    class WorldInitSystem : IEcsPreInitSystem, IEcsRunSystem
+    class WorldInitSystem : IEcsPreInitSystem, IEcsRunSystem, IEcsDestroySystem
     {
         EcsWorld _world = null;
 
@@ -29,6 +28,9 @@ namespace Voody.UniLeo
             {
                 AddEntity(convertable.gameObject);
             }
+
+            // After adding all entitites from the begining of the scene, we need to handle global World value
+            WorldHandler.Init(_world);
         }
 
         public void Run()
@@ -40,11 +42,15 @@ namespace Voody.UniLeo
                 if (component.gameObject)
                 {
                     AddEntity(component.gameObject);
-                    GameObject.Instantiate(component.gameObject, component.position, Quaternion.identity);
                 }
 
                 entity.Del<InstantiateComponent>();
             }
+        }
+
+        public void Destroy()
+        {
+            WorldHandler.Destroy();
         }
 
         // Creating New Entity with components function
