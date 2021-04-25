@@ -1,5 +1,3 @@
-<meta name="google-site-verification" content="zcS4zgk6WKF0VQ_Qg1WJAdK4eLucCipuCWZY0urRW6I" />
-
 # UniLeo - Unity Conversion Workflow for [Leopotam ECS](https://github.com/Leopotam/ecs)
 ## Easy convert GameObjects to Entity
 
