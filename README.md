@@ -90,13 +90,12 @@ If you read the [Leo's documentation](https://github.com/Leopotam/ecs), you know
 
 ## Spawn Prefabs
 
-Not all GameObjects need to be created at the beginning of the gameplay. If you need to Spawn Prefab, just create entity with `InstantiateComponent` in any System or use built in EntitySpawner class
+Starting from version `1.0.2` you can just spawn prefab from any method. Entitie will be create automatically.
 
-    EntitySpawner.Instantiate(gameObject, position, rotation, _world);
+    GameObject.Instantiate(gameObject, position, rotation, _world);
+    PhotonNetwork.Instantiate .. // <- Works in 3rd party Assets
     
- > Every ECS System has _world reference
- 
- > Every Prefab initialize with new entity. Components will be added automatically
+> Every Prefab initialize with new entity. Components will be added automatically
 
 
 ## Thanks!
