@@ -17,11 +17,11 @@ Add new line to `Packages/manifest.json`
 **Second** install this repository
 
 ```
-"com.voody.unileo": "https://github.com/voody2506/UniLeo.git",
+"com.voody.UniLeo": "https://github.com/voody2506/UniLeo.git",
 ```
 
 <details>
-  <summary>How to add by Git URL</summary>
+  <summary>How to add through Package Manager</summary>
 Unity Editor -> Window -> Package Manager
 	
 	
@@ -30,23 +30,23 @@ Unity Editor -> Window -> Package Manager
 
 ## Don't forget NameSpace 
 
-```
+```csharp
 using Voody.UniLeo;
 ```
 
-
 ## Create your first component
-     [Serializable] // <- Important to add Serializable attribute
-     public struct PlayerComponent {
-	    public float health;
-     }
-
+```csharp
+[Serializable] // <- Important to add Serializable attribute
+public struct PlayerComponent {
+    public float health;
+}
+```
 Now you need to control health value within the Unity Inspector,  but Unity Engine works only with MonoBehavior classes. Thats mean you need to create MonoBehavior Provider for our component.
 
 Create new script with Mono provider.
-
-    public sealed class PlayerComponentProvider : MonoProvider<PlayerComponent> { }
-
+```csharp
+public sealed class PlayerComponentProvider : MonoProvider<PlayerComponent> { }
+```
 Add PlayerComponentProvider into Inspector
 <details>
   <summary>Inspector Preview</summary>
@@ -58,30 +58,20 @@ Now you can control component values within the Inspector. Congratulations!
 
  > At this moment you can not control values from Inspector at Runtime
 
-<details>
-  <summary>Choose conversion method</summary>
-
-![](https://i.ibb.co/GprVL54/2021-04-21-01-43-28.png)
-
- > Convert And Inject - Just creates entitie with components based on GameObject
- 
- > Convert And Destroy - Deletes GameObject after conversion
-
-</details>
-
 ## Convert your GameObjects to Entity
 
 If you read the [Leo's documentation](https://github.com/Leopotam/ecs), you know that for successful work with Leo ECS, you should to create Startup ECS Monobehavior. To Automatically convert GameObjects to Entity add `ConvertScene()` method.
 
-```
- void Start() 
- {
-     _world = new  EcsWorld ();    
-     _systems = new  EcsSystems (_world)
-       .ConvertScene(); // <- Need to add this method
-       .Add (new  ExampleSystem())
-     	// Other ECS Systems   
-     _systems.Init (); 
+```csharp
+void Start() 
+{
+    _world = new  EcsWorld ();    
+    _systems = new  EcsSystems (_world);
+    _systems
+        .ConvertScene() // <- Need to add this method
+        .Add(new ExampleSystem())
+        // Other ECS Systems   
+        .Init(); 
  }
 ```
 
@@ -90,12 +80,13 @@ If you read the [Leo's documentation](https://github.com/Leopotam/ecs), you know
 
 ## Spawn Prefabs
 
-Starting from version `1.0.2` you can just spawn prefab from any method. Entitie will be create automatically.
-
-    GameObject.Instantiate(gameObject, position, rotation, _world);
-    PhotonNetwork.Instantiate .. // <- Works in 3rd party Assets
-    
-> Every Prefab initialize with new entity. Components will be added automatically
+Not all GameObjects need to be created at the beginning of the gameplay. If you need to Spawn Prefab, just create entity with `InstantiateComponent` in any System or use built in EntitySpawner class
+```csharp
+EntitySpawner.Instantiate(gameObject, position, rotation, _world);
+```
+ > Every ECS System has _world reference
+ 
+ > Every Prefab initialize with new entity. Components will be added automatically
 
 
 ## Thanks!
