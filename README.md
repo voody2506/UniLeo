@@ -80,12 +80,13 @@ void Start()
 
 ## Spawn Prefabs
 
-Not all GameObjects need to be created at the beginning of the gameplay. If you need to Spawn Prefab, just create entity with `InstantiateComponent` in any System or use built in EntitySpawner class
+Starting from `1.0.2` spawning prefabs aviabale from any Instantiate method, including 3rd party Assets
+
 ```csharp
-EntitySpawner.Instantiate(gameObject, position, rotation, _world);
+GameObject.Instantiate(gameObject, position, rotation, _world);
+PhotonNetwork.Instantiate <- works in 3rd party Assets
 ```
- > Every ECS System has _world reference
- 
+
  > Every Prefab initialize with new entity. Components will be added automatically
 
 
