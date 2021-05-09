@@ -16,7 +16,6 @@ namespace Voody.UniLeo
         private void Start()
         {
             var world = WorldHandler.GetWorld();
-            Debug.Log(world);
             if (world != null)
             {
                 var entity = world.NewEntity();
