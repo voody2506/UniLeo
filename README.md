@@ -94,7 +94,7 @@ void Start()
 Starting from `1.0.2` spawning prefabs aviabale from any Instantiate method, including 3rd party Assets
 
 ```csharp
-GameObject.Instantiate(gameObject, position, rotation, _world);
+GameObject.Instantiate(gameObject, position, rotation);
 PhotonNetwork.Instantiate <- works in 3rd party Assets
 ```
 
