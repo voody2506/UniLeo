@@ -17,7 +17,7 @@ Add new line to `Packages/manifest.json`
 **Second** install this repository
 
 ```
-"com.voody.UniLeo": "https://github.com/voody2506/UniLeo.git",
+"com.voody.unileo": "https://github.com/voody2506/UniLeo.git",
 ```
 
 <details>
@@ -58,6 +58,17 @@ Now you can control component values within the Inspector. Congratulations!
 
  > At this moment you can not control values from Inspector at Runtime
 
+<details>
+  <summary>Choose conversion method</summary>
+
+![](https://i.ibb.co/GprVL54/2021-04-21-01-43-28.png)
+
+ > Convert And Inject - Just creates entitie with components based on GameObject
+ 
+ > Convert And Destroy - Deletes GameObject after conversion
+
+</details>
+
 ## Convert your GameObjects to Entity
 
 If you read the [Leo's documentation](https://github.com/Leopotam/ecs), you know that for successful work with Leo ECS, you should to create Startup ECS Monobehavior. To Automatically convert GameObjects to Entity add `ConvertScene()` method.
@@ -80,12 +91,13 @@ void Start()
 
 ## Spawn Prefabs
 
-Not all GameObjects need to be created at the beginning of the gameplay. If you need to Spawn Prefab, just create entity with `InstantiateComponent` in any System or use built in EntitySpawner class
+Starting from `1.0.2` spawning prefabs aviabale from any Instantiate method, including 3rd party Assets
+
 ```csharp
-EntitySpawner.Instantiate(gameObject, position, rotation, _world);
+GameObject.Instantiate(gameObject, position, rotation);
+PhotonNetwork.Instantiate <- works in 3rd party Assets
 ```
- > Every ECS System has _world reference
- 
+
  > Every Prefab initialize with new entity. Components will be added automatically
 
 

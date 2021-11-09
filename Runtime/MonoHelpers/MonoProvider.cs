@@ -7,7 +7,7 @@ namespace Voody.UniLeo
     public abstract class MonoProvider <T> : BaseMonoProvider, IConvertToEntity where T : struct
     {
         [SerializeField]
-         private T value;
+         protected T value;
 
         void IConvertToEntity.Convert(EcsEntity entity)
         {
