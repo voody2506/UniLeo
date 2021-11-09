@@ -66,6 +66,8 @@ Now you can control component values within the Inspector. Congratulations!
  > Convert And Inject - Just creates entitie with components based on GameObject
  
  > Convert And Destroy - Deletes GameObject after conversion
+	
+ > Convert And Save - Stores associated GameObject entity in ConvertToEntity Script
 
 </details>
 
