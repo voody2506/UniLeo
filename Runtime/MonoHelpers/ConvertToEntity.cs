@@ -20,9 +20,9 @@ namespace Voody.UniLeo
             var world = WorldHandler.GetWorld();
             if (world != null)
             {
-                var entity = world.NewEntity();
+                entity = world.NewEntity();
                 var instantiateComponent = new InstantiateComponent() { gameObject = gameObject };
-                entity.Replace(instantiateComponent);
+                entity.Value.Replace(instantiateComponent);
             }
         }
 
