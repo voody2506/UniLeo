@@ -1,5 +1,4 @@
 using System;
-using System;
 using System.Collections.Generic;
 using Leopotam.Ecs;
 using UnityEngine;
@@ -78,6 +77,9 @@ namespace Voody.UniLeo
                         break;
                     case ConvertMode.ConvertAndInject:
                         GameObject.Destroy(convertComponent);
+                        break;
+                    case ConvertMode.ConvertAndSaveEntity:
+                        convertComponent.Set(entity);
                         break;
                 }
             }
