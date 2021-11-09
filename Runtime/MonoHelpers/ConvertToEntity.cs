@@ -9,7 +9,7 @@ namespace Voody.UniLeo
     {
         ConvertAndInject,
         ConvertAndDestroy,
-        ConvertAndSaveEntity
+        ConvertAndSave
     }
     public class ConvertToEntity : MonoBehaviour
     {

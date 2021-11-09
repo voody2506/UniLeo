@@ -78,7 +78,7 @@ namespace Voody.UniLeo
                     case ConvertMode.ConvertAndInject:
                         GameObject.Destroy(convertComponent);
                         break;
-                    case ConvertMode.ConvertAndSaveEntity:
+                    case ConvertMode.ConvertAndSave:
                         convertComponent.Set(entity);
                         break;
                 }
