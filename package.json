@@ -3,7 +3,7 @@
     "displayName": "UniLeo",
     "description": "Unity Conversion Workflow for Leopotam ECS. Easy convert GameObjects to Entity.",
     "unity": "2019.1",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "keywords": [
         "leoecs",
         "ecs",
