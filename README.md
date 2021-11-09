@@ -68,6 +68,12 @@ Now you can control component values within the Inspector. Congratulations!
  > Convert And Destroy - Deletes GameObject after conversion
 	
  > Convert And Save - Stores associated GameObject entity in ConvertToEntity Script
+```csharp
+	// Than just get value from ConvertToEntity MonoBehavior
+	if (ConvertToEntity.TryGetEntity().HasValue) {
+	  ConvertToEntity.TryGetEntity().Value
+	}
+```
 
 </details>
 
