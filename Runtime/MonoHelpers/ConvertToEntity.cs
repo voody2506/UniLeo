@@ -15,10 +15,12 @@ namespace Voody.UniLeo
     {
         public ConvertMode convertMode;
         private EcsEntity? entity;
+        
+        private bool isProccessed = false;
         private void Start()
         {
             var world = WorldHandler.GetWorld();
-            if (world != null)
+            if (world != null && !isProccessed)
             {
                 var instantiateEntity = world.NewEntity();
                 var instantiateComponent = new InstantiateComponent() { gameObject = gameObject };
@@ -37,6 +39,11 @@ namespace Voody.UniLeo
             }
 
             return null;
+        }
+        
+        public void setProccessed()
+        {
+            this.isProccessed = true;
         }
 
         public void Set(EcsEntity entity)
