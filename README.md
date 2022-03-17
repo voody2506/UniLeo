@@ -12,7 +12,7 @@ Thanks to [SinyavtsevIlya](https://github.com/SinyavtsevIlya) and [Leopotam](htt
 
 Add new line to `Packages/manifest.json`
 ```
-"com.leopotam.ecs": "https://github.com/Leopotam/ecs.git",
+"com.leopotam.ecs": "https://github.com/voody2506/ecs.git",
 ```
 **Second** install this repository
 
